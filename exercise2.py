@@ -15,10 +15,10 @@ class Point2D:
         return self._coordinates[1]
 
     def __iadd__(self, other: Vector) -> "Point2D":
-    # in-place: mevcut koordinatları doğrudan güncelliyoruz
-    self._coordinates[0] = self._coordinates[0] + other[0]
-    self._coordinates[1] = self._coordinates[1] + other[1]
-    return self
+        # in-place: mevcut koordinatları doğrudan güncelliyoruz
+        self._coordinates[0] = self._coordinates[0] + other[0]
+        self._coordinates[1] = self._coordinates[1] + other[1]
+        return self
 
 
     def __isub__(self, other: Vector) -> Point2D:
