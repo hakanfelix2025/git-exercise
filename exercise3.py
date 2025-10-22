@@ -25,14 +25,16 @@ class Rectangle:
     def upper_right(self) -> Point2D:
         return self.corner(3)
 
-    def contains(self, point: Point2D) -> bool:
-        # Task A: duplication removed via is_in_interval
+
+    # def contains(self, point: Point2D, tolerance: float = 0.0) -> bool: # Task B
+    def contains(self, point: Point2D, tolerance: float = 0.0) -> bool:
         x_min = self._lower_left.x
         x_max = self._lower_left.x + self._dx
         y_min = self._lower_left.y
         y_max = self._lower_left.y + self._dy
-        return self.is_in_interval(point.x, x_min, x_max) and \
-               self.is_in_interval(point.y, y_min, y_max)
+        return self.is_in_interval(point.x, x_min, x_max, tolerance) and \
+               self.is_in_interval(point.y, y_min, y_max, tolerance)
+
 
     def _is_idx_on_upper_edge(self, i: int) -> bool:
         return i in [2, 3]
